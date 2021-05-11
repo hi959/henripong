@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>אודות</title>
+{% endblock %}
+
+{% block body %}
+    <section class="section-about">
+        <img src='{{ url_for("static", filename="images/about/WhatsApp_Image_2020-07-16_at_14.32.35-removebg-preview.png")}}' alt="" class="section-about__img">
+        <div class="container section-about__container">
+            <div class="section-about__content">
+                <h2 class="section__title section-about__title">למה כדאי אצלינו?</h2>
+                <p class="section-about__text">ניסיון מוצלח של שלוש שנים מול עיריות,
+                חברות, מתנסים, בתי ספר, קייטנות, מחנות אימונים וחוגים בכל הגילאים.
+                כמו כן אני מנהל ומאמן את קבוצת "מכבי ע.ל.ה אריאל"
+                המשתתפת בליגות הנוער השונות.</p>
+            </div>
+        </div>
+    </section>
+    <div style="margin: 100px; padding-bottom: 100px; background: #131f33">
+        <div class="about-area">
+            <div class="container">
+                <div class="row rowCntrl">
+                    <div class="col-lg-4">
+                        <div class="about-BssImg">
+                            <img src='{{ url_for("static", filename="images/aboutBoss/f8099a96-b128-460f-b201-12968681860a.jpg")}}' alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-lg-offset-1">
+                        <div class="about-BssText">
+                            <h2>הנרי אבו</h2>
+                            <p>אנו מציעים שירותי אימון טנ"ש וספורט כגון: אימונים פרטיים, לחברות,מחנות אימונים וקייטנות.
+    יש לנו שיתופי פעולה עם עיריות,בתי ספר ווחברות פרטיות.
+    הכל בהנהלת הנרי אבו, מדריך טנ"ש מוסמך ומנהל ומאמן את " מכבי ע.ל.ה אריאל". בנוסף בעל  תעודת הסמכה לפרוייקט "זוזו".</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

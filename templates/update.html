@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+{% endblock %}
+
+
+{% block body %}
+
+<br/>
+<div class="container-sm border border-5 border-warning" style="padding: 100px; margin-top: 50px;">
+<form method="post" dir="rtl" enctype="multipart/form-data" action="/change/{{ name_to_change.id }}">
+    {{ form.hidden_tag() }}
+
+    <h3>שינוי מוצר</h3>
+
+    <div class="mb-3">
+    {{ form.title.label(class="form-label") }}
+    {{ form.title(class="form-control", value=name_to_change.title) }}
+    </div>
+
+    <div class="mb-3">
+    {{ form.price.label(class="form-label") }}
+    {{ form.price(class = "form-control", value=name_to_change.price) }}
+    </div>
+
+    <div class="mb-3">
+    {{ form.shortDescribe.label(class="form-label") }}
+    {{ form.shortDescribe(class = "form-control", value=name_to_change.shortDescribe) }}
+    </div>
+
+    <div class="mb-3">
+    {{ form.describe.label(class="form-label") }}
+    {{ form.describe(class = "form-control") }}
+    </div>
+
+    <div class="mb-3">
+    {{ form.image_name.label(class="form-label") }}
+    {{ form.image_name(class = "form-control", value=name_to_change.image_name) }}
+    </div>
+
+    <br><br><br>
+    {{ form.submit(class = "btn btn-dark") }}
+</form>
+</div>
+
+
+{% endblock %}

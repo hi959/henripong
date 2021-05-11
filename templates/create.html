@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+{% endblock %}
+
+
+{% block body %}
+
+<br/>
+<div class="container-sm border border-5 border-success" style="padding: 100px; margin-top: 50px;">
+<form method="post" dir="rtl" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+
+    <h3>יצירת מוצר חדש</h3>
+
+    <div class="mb-3">
+    {{ form.title.label(class="form-label") }}
+    {{ form.title(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+    {{ form.price.label(class="form-label") }}
+    {{ form.price(class = "form-control") }}
+    </div>
+
+    <div class="mb-3">
+    {{ form.shortDescribe.label(class="form-label") }}
+    {{ form.shortDescribe(class = "form-control") }}
+    </div>
+
+    <div class="mb-3">
+    {{ form.describe.label(class="form-label") }}
+    {{ form.describe(class = "form-control") }}
+    </div>
+
+    <div class="mb-3">
+    {{ form.image_name.label(class="form-label") }}
+    {{ form.image_name(class = "form-control") }}
+    </div>
+
+    <br><br><br>
+    {{ form.submit(class = "btn btn-dark") }}
+</form>
+</div>
+<br><br><br><br><br><br>
+<div class="catalog">
+    {% for good in data %}
+        <div class="catalog__item bg-dark bg-gradient" dir="rtl">
+            <div class="product ">
+                <img src='{{ url_for("static", filename="images/products/{0}".format(good.imageName)) }}' class="product__image">
+                <div class="product__content">
+                    <h3 class="product__title">{{ good.title }}</h3>
+                    <p class="product__description">{{ good.shortDescribe }}</p>
+                </div>
+                <footer class="product__footer">
+                    <div class="product__bottom">
+                        <div class="product__price">
+                            <span class="product__currency">&#8362;</span>
+                            <span class="product__price-value">{{ good.price }}</span>
+                        </div>
+                        <button class="product__btn"><a href="{{ url_for('change', id=good.id) }}">קרא עוד</a></button>
+                    </div>
+                </footer>
+						</div>
+						<br>
+						<br>
+						<br>
+				</div>
+    {%endfor%}
+</div>
+{% endblock %}

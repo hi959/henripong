@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+	{% block title %}
+	<title>home ILPong page</title>
+	{% endblock %}
+
+	{% block body %}
+
+		<div class="headerImage">
+			<img class="second" src="static/images/home/header/logo1.gif">
+			<img class="first" src="static/images/home/header/logo.png">
+		</div>
+
+		<h1 class="border border-dark home__title">!!!כאן צריכה להיות הכותרת של האתר</h1>
+		<div class="ForHr First_Hr">
+			<hr>
+			<img src="static/images/home/pongHr.png" width="45" height="45">
+			<hr>
+		</div>
+
+		<section class="section-about">
+			<img src='{{ url_for("static", filename="images/about/WhatsApp Image 2020-07-16 at 14.32.35.jpeg")}}' alt="" class="section-about__img">
+			<div class="container section-about__container">
+				<div class="section-about__content">
+					<h2 class="section__title section-about__title">אודות</h2>
+					<p class="section-about__text">אנו מציעים שירותי אימון טנ"ש וספורט כגון: אימונים פרטיים, לחברות,מחנות אימונים וקייטנות.
+				יש לנו שיתופי פעולה עם עיריות,בתי ספר ווחברות פרטיות.
+				הכל בהנהלת הנרי אבו, מדריך טנ"ש מוסמך ומנהל ומאמן את " מכבי ע.ל.ה אריאל". בנוסף בעל  תעודת הסמכה לפרוייקט "זוזו".</p>
+				</div>
+			</div>
+		</section>
+
+		<div class="main-content">
+			<br>
+			<div class="catalog">
+				{% for good in data %}
+				<div class="catalog__item bg-dark bg-gradient" dir="rtl">
+						<div class="product ">
+							<div>
+								<img src='{{ url_for("static", filename="images/products/{0}".format(good.imageName)) }}' class="product__image">
+							</div>
+							<div class="product__content">
+								<h3 class="product__title">{{ good.title }}</h3>
+									<p class="product__description">{{ good.shortDescribe }}</p>
+							</div>
+						<footer class="product__footer">
+							<div class="product__bottom">
+								<div class="product__price">
+									<span class="product__currency">&#8362;</span>
+									<span class="product__price-value">{{ good.price }}</span>
+								</div>
+								<button class="product__btn"><a href="">קרא עוד</a></button>
+								<div id="paypal-button"></div>
+
+							</div>
+						</footer>
+						</div>
+						<br>
+						<br>
+						<br>
+				</div>
+			{%endfor%}
+				</div>
+						<div class="ForHr">
+							<hr>
+							<img src="static/images/home/pongHr.png" width="45" height="45">
+							<hr>
+						</div>
+						<br>
+			</div>
+
+
+
+
+{% endblock %}
+
