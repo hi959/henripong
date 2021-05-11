@@ -89,7 +89,7 @@ def create():
         try:
             db.session.add(item)
             db.session.commit()
-            return redirect('http://127.0.0.1:5000/create')
+            return redirect('https://pongexamplefinal.herokuapp.com/create')
         except:
             return "נמצאה בעיה"
     else:
