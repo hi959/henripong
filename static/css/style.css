@@ -269,13 +269,14 @@ div.main-content > ul{
     padding: 0;
     max-width: 100%;
     display: flex;
-    justify-content: center;
 }
 
 .section-about__container{
     position: relative;
+    left: 0;
     display: flex;
-    justify-content: flex-start;
+    margin: 0;
+    width: 50%;
 }
 
 .section-about__img{
@@ -285,11 +286,11 @@ div.main-content > ul{
     width: 50%;
     height: 100%;
     object-fit: cover;
+    display: flex;
 }
 
 .section-about__content{
-    width: 50%;
-    max-width: 100%;
+    width: 624px;
     text-align: right;
     direction: rtl;
 }
