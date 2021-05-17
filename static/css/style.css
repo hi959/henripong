@@ -197,7 +197,8 @@ div.main-content > ul{
 
 .product__image{
     display: block;
-    width: 290px;
+    max-width: 290px;
+    max-height: 220;
     margin: 0 auto 15px;
     border-radius: 10px;
     object-fit: cover;
