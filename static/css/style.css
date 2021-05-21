@@ -402,7 +402,7 @@ div.main-content > ul{
 .suggest_head > span {
     display: inline-block;
     color: #c06761;
-    font-size: 40px;
+    font-size: 200%;
     padding-right: 1%;
 }
 
