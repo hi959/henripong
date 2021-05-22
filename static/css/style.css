@@ -414,10 +414,29 @@ div.main-content > ul{
     margin-right: 2%;
 }
 
+.chclass > div> h4:last-child {
+    margin-top: 2%
+}
+
 .chclass > div> h5 {
     color: #7c7c7c;
     margin-right: 2%;
     width: 70%;
+}
+
+.barriers{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.barriers > div {
+    height: auto;
+    min-width: 20%;
+}
+
+.barriers > div > h5:first-child {
+    color: #324763;
 }
 
 @media (max-width: 1800px) {
