@@ -29,9 +29,10 @@ nav {
 }
 
 .headerImage {
+    display: flex;
     position: relative;
     top: 56px;
-	height: 544px;
+	height: 400px;
 	width: 100%;
 	background-image: url("../images/home/header/bg.png");
 }
@@ -390,23 +391,28 @@ div.main-content > ul{
    width: 95%;
    height: 20%;
    margin-top: 2%;
-   display: block;
+   display: flex;
    margin-right: 2%;
+   flex-direction: row;
 }
 
 .suggest_head > .fas{
     color: #e6f8f8;
     background-color: #334760;
-    padding: 1%;
-    font-size: 35px;
-    position: absolute;
+    width: 7%;
+    height: 80%;
+    font-size: 200%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .suggest_head > span {
     display: inline-block;
     color: #c06761;
     font-size: 200%;
-    margin-right: 7%;
+    margin-right: 2%;
     margin-top: 3%;
 }
 .chclass > div> h4 {
