@@ -39,7 +39,7 @@ nav {
 
 .second {
 	position: absolute;
-	max-height: 100%;
+	height: inherit;
 	left: 25%;
 	z-index: 3;
 }
@@ -47,7 +47,7 @@ nav {
 .first {
 	position: absolute;
 	right: 0%;
-	max-height: 100%;
+	height: inherit;
 	z-index: 3;
 }
 
