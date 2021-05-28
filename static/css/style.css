@@ -320,11 +320,11 @@ div.main-content > ul{
 
 
 
-.about-BssImg{
+.about-BssImg {
     position: relative;
 }
 
-.about-BssImg:before{
+.about-BssImg:before {
     position: absolute;
     content: '';
     left: -30px;
@@ -335,30 +335,30 @@ div.main-content > ul{
 }
 
 
-.about-BssImg img{
+.about-BssImg img {
     width: 80%;
 }
 
-.about-BssText{
+.about-BssText {
     padding-top: 20%;
     margin-left: 15px;
 }
 
-.about-BssText h2{
+.about-BssText h2 {
     text-align: right;
     color: #fff;
     font-family: lobster;
     font-size: 50px;
 }
 
-.about-BssText p{
+.about-BssText p {
     align-text: right;
     font-size: 18px;
     color: #ddd;
     direction: rtl;
 }
 
-.deploys{
+.deploys {
     display: flex;
     width: 100%;
     height: fit-content;
@@ -366,14 +366,14 @@ div.main-content > ul{
     direction: rtl;
 }
 
-.course_class{
+.course_class {
     background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
     height: 500px;
 }
 
-.suggest__one{
+.suggest__one {
     height: 500px;
     width: 40%;
     background-color: #2d3e50;
@@ -382,8 +382,12 @@ div.main-content > ul{
     align-items: center;
 }
 
-.suggest__one > h1{
+.suggest__one > h1 {
     color: #f4f9fd;
+}
+
+.suggest__one > h1 > span {
+    color: #c92d1e;
 }
 
 .chclass{
@@ -448,12 +452,38 @@ div.main-content > ul{
     color: #324763;
 }
 
-.adult_class{
+.adult_class {
     width: 50%;
 }
 
-.activity_class{
+.activity_class {
     width: 50%;
+}
+
+.private_class {
+    width: 60%
+}
+
+.suggest_two {
+    width: 40%;
+    background: #ea4b3f;
+}
+
+.suggest_top {
+    display: flex;
+    padding: 8%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.suggest_top > h1:first-child {
+    font-size: 4em;
+    color: #c92d1e;
+}
+
+.suggest_top > h1:last-child {
+    color: #fffdf9;
 }
 
 @media (max-width: 1800px) {
