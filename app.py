@@ -58,11 +58,6 @@ def home():
     return render_template('home.html', data=chosed)
 
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
-
 @app.route('/create', methods=['POST', 'GET'])
 def create():
 

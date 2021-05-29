@@ -342,6 +342,7 @@ div.main-content > ul{
 .about-BssText {
     padding-top: 20%;
     margin-left: 15px;
+    text-align: right;
 }
 
 .about-BssText h2 {
@@ -352,7 +353,6 @@ div.main-content > ul{
 }
 
 .about-BssText p {
-    align-text: right;
     font-size: 18px;
     color: #ddd;
     direction: rtl;
@@ -364,6 +364,7 @@ div.main-content > ul{
     height: fit-content;
     flex-wrap: wrap;
     direction: rtl;
+    text-align: right;
 }
 
 .course_class {
@@ -433,7 +434,7 @@ div.main-content > ul{
 
 .course_class > div> h5 {
     color: #7c7c7c;
-    margin-right: 2%;
+    margin-right: 4%;
     width: 70%;
 }
 
