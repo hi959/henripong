@@ -487,6 +487,25 @@ div.main-content > ul{
     color: #fffdf9;
 }
 
+.contact-social-icons{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contact-btn{
+    width: 10%;
+    background-color: red;
+}
+
+.contact-btn:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
 @media (max-width: 1800px) {
     .dws-menu > ul{
         width: 33%;
