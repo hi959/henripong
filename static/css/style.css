@@ -64,78 +64,7 @@ nav {
 	background-image: url("images/pongHr.png");
 }
 
-.dws-menu * {
-	margin: 0;
-	padding: 0;
-	float: none;
-}
 
-.dws-menu ul,
-.dws-menu ol{
-	list-style: none;
-}
-
-.dws-menu > ul{
-	display: flex;
-	justify-content: center;
-	width: 29%;
-}
-
-.dws-menu > ul li a{
-	display: block;
-	height: 35px;
-	background: #3448CE;
-	padding: 15px;
-	padding-left: 15px;
-	font-size: 17px;
-	color: #ffffff;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-family: Arial, Verdana, Sans-serif;
-}
-
-.dws-menu > ul li{
-	text-align: right;
-	position: relative;
-	width: 20%;
-	border-right: 1px solid grey;
-	border-left: 1px solid grey;
-}
-
-.dws-menu > ul li > a i.fas{
-	position: absolute;
-	top: 15px;
-	left: 15px;
-	font-size: 18px;
-}
-
-.dws-menu li a:hover{
-	background-color: #333333;
-	color: #ffffff;
-	box-shadow: -7px 15px 10px 4px black;
-	transition: all 0.3s ease;
-}
-
-.dws-menu li ul{
-	position: absolute;
-	min-width: 150px;
-	display: none;
-}
-
-.dws-menu li > ul li{
-	border: 1px solid white;
-	min-width: 150px;
-}
-
-.dws-menu li > ul li a{
-	padding: 10px;
-	text-transform: none;
-	background: #3448CE;
-}
-
-.dws-menu li:hover > ul{
-	display: block;
-}
 
 .ForHr{
 	display: flex;
@@ -157,18 +86,6 @@ nav {
 	height: auto;
 	width: 4%;
 	margin: 5px;
-}
-
-div.main-content{
-	display: block;
-	width: 80%;
-	margin-left: 12.5%;
-	margin-top: 50px;
-}
-
-div.main-content > ul{
-	text-align: left;
-	margin-left: 50px;
 }
 
 .catalog{
@@ -771,12 +688,6 @@ ul.social-icons {
 
     .ForHr > img{
         display: none;
-    }
-}
-
-@media (max-width: 700px) {
-    .dws-menu > ul{
-        width: 100%;
     }
 }
 

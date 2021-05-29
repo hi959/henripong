@@ -8,6 +8,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
+
+"""
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///shop.db'
 app.config['SQLAlCHEMY_TRACK_MODIFICATION'] = False
 app.config['SECRET_KEY'] = "1428kjhg"
@@ -44,20 +46,23 @@ class Items(db.Model):
 class ChangeForm(FlaskForm):
     image_name = StringField("שם התמונה")
     submish = SubmitField("שנה מוצר")
-
+"""
 
 @app.route('/')
 def home():
+    """
     items = Items.query.order_by(Items.price).all()
     chosed = []
     while len(chosed) < 8:
         good = random.choice(items)
         if good not in chosed:
             chosed.append(good)
+    """
 
-    return render_template('home.html', data=chosed)
+    return render_template('home.html')  #צריך להוסיף , data=chosed
 
 
+"""
 @app.route('/create', methods=['POST', 'GET'])
 def create():
 
@@ -122,7 +127,7 @@ def change(id):
         return render_template("update.html",
                                form=form,
                                name_to_change=name_to_change)
-
+"""
 
 if __name__ == '__main__':
     app.run(debug=True)
