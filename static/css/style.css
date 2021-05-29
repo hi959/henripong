@@ -550,21 +550,11 @@ ul.social-icons {
     }
 
 @media (max-width: 1550px) {
-    .dws-menu > ul{
-        width: 38%;
-    }
-        .headerImage{
-        height: 500px;
-    }
     .second{
         left: 0%;
     }
     .first{
         right: 0%;
-    }
-
-    .rowCntrl{
-        margin-left: 100px;
     }
 }
 
@@ -588,10 +578,6 @@ ul.social-icons {
 
     .dws-menu{
         background-color: #4C5ED8;
-    }
-
-    .rowCntrl{
-        margin-left: 60px;
     }
 }
 
