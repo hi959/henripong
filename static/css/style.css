@@ -345,7 +345,7 @@ nav {
     margin-right: 2%;
 }
 
-.chclass > div> h4:last-child {
+.last_h4 {
     margin-top: 2%
 }
 
@@ -539,15 +539,9 @@ ul.social-icons {
     background-color: #eb8231;
 }
 
-@media (max-width: 1800px) {
-    .dws-menu > ul{
-        width: 33%;
-    }
-
-@media (max-width: 1630px) {
-    .dws-menu > ul{
-        width: 35%;
-    }
+.col-lg-4, .col-lg-6 {
+    width: 50%;
+}
 
 @media (max-width: 1550px) {
     .second{
@@ -558,26 +552,9 @@ ul.social-icons {
     }
 }
 
-@media (max-width: 1450px) {
-    .dws-menu > ul{
-        width: 40%;
-    }
-
-
-
-@media (max-width: 1350px) {
-    .dws-menu > ul{
-        width: 42%;
-    }
-}
-
-@media (max-width: 1250px) {
-    .dws-menu > ul{
-        width: 80%;
-    }
-
-    .dws-menu{
-        background-color: #4C5ED8;
+@media (max-width: 1315px){
+    .suggest_top > h1:first-child{
+        font-size: 350%;
     }
 }
 
@@ -593,12 +570,63 @@ ul.social-icons {
     }
 
     .section-about__title{
-    margin-bottom: 30px;
-    margin-top: 0px;
+        margin-bottom: 30px;
+        margin-top: 0px;
     }
 
     .section-about__container{
         max-width: 100%;
+    }
+
+    .suggest_head > .fas {
+        width: 10%;
+    }
+
+    .adult_class div h4{
+        font-size: 140%;
+    }
+
+    .social-icons > li > a > i{
+        font-size: 200%;
+    }
+}
+
+@media (max-width: 1180px){
+    .course_class{
+        height: 350px;
+    }
+
+    h4{
+        font-size: 160%;
+        margin: 0;
+    }
+
+    h5{
+        font-size: 100%;
+    }
+
+    .barriers div h5{
+        font-size: 90%;
+    }
+
+    .adult_class div h4{
+        font-size: 140%;
+    }
+
+    .activity_class div h4{
+        font-size: 140%;
+    }
+
+    .suggest_two .suggest_top > h1:first-child {
+        font-size: 2rem;
+    }
+
+    .suggest_two .suggest_top > h1:last-child {
+        font-size: 1.5rem;
+    }
+
+    .last_h4 {
+        margin-top: 0;
     }
 }
 
@@ -609,6 +637,28 @@ ul.social-icons {
 
     .First_Hr{
         margin-top: 15px;
+    }
+}
+
+@media (max-width: 1025px) {
+    .course_class > div> h5 {
+        font-size: 90%;
+    }
+}
+
+@media (max-width: 943px) {
+    .course_class > div> h4 {
+        font-size: 150%;
+    }
+
+    .social-icons > li > a > i {
+        font-size: 150%;
+    }
+}
+
+@media (max-width: 900px) {
+    .course_class > div> h4 {
+        font-size: 150%;
     }
 }
 
@@ -623,9 +673,17 @@ ul.social-icons {
 
 }
 
+@media (max-width: 890px) {
+    .course_class > div> h4{
+        font-size: 125%;
+    }
+}
 @media (max-width: 835px) {
     .section-about{
         margin: 0;
+        flex-direction: column-reverse;
+        justify-content: center;
+        height: 500px;
     }
 
     .section-about__img{
@@ -636,7 +694,8 @@ ul.social-icons {
     .section-about__container{
         z-index: 4;
         justify-content: center;
-        margin-top: 500px;
+        margin-top: 270px;
+        width: 100%;
     }
 
     .section-about__content{
@@ -646,18 +705,62 @@ ul.social-icons {
     }
 
     .section-about__text{
-        color: black;
+        color: #fffff;
         padding: 0;
+        font-size: 17px;
     }
 
     .section-about__title{
-        color: black;
+        color: #fffff;
+        font-size: 24px;
     }
 
     div.main-content{
-        margin-top: 390px;
+        margin-top: 420px;
     }
 }
+
+@media (max-width: 1200px) {
+    .suggest_head > .fas {
+        font-size: 150%;
+    }
+}
+
+@media (max-width: 770px) {
+    .first{
+        border-bottom: 2px solid white;
+    }
+
+    .second{
+        border-bottom: 2px solid white;
+    }
+    .headerImage{
+        border-bottom: 2px solid white;
+        position: initial;
+    }
+
+    .ForHr{
+        display: none;
+    }
+
+    .section-about{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-about__img{
+        position: relative;
+        border-radius: 5%;
+        width: 90%;
+        height: 70%;
+    }
+
+    .section-about__container{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
 
 @media (max-width: 750px) {
     .headerImage{
