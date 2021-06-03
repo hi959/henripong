@@ -591,6 +591,16 @@ ul.social-icons {
     }
 }
 
+.about-boss{
+    background: #131f33;
+    width: 100%;
+    padding: 60px 0px 60px 0px;
+}
+
+.about-boss2{
+    display: none;
+}
+
 @media (max-width: 1180px){
     .course_class{
         height: 350px;
@@ -737,6 +747,7 @@ ul.social-icons {
     .headerImage{
         border-bottom: 2px solid white;
         position: initial;
+        margin-top: 57px;
     }
 
     .ForHr{
@@ -746,6 +757,7 @@ ul.social-icons {
     .section-about{
         flex-direction: column;
         align-items: center;
+        border-bottom: 2px solid white;
     }
 
     .section-about__img{
@@ -756,9 +768,20 @@ ul.social-icons {
     }
 
     .section-about__container{
-        margin-top: 20px;
+        margin-top: 30px;
         margin-bottom: 20px;
     }
+
+    .about-boss{
+        display: none;
+    }
+
+    .about-boss2{
+        display: flex;
+        background-image: url("../images/aboutBoss/Screenshot 2021-06-03 212642.png");
+        align-items: flex-end;
+    }
+
 }
 
 
