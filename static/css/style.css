@@ -715,13 +715,13 @@ ul.social-icons {
     }
 
     .section-about__text{
-        color: #fffff;
+        color: #ffffff;
         padding: 0;
         font-size: 17px;
     }
 
     .section-about__title{
-        color: #fffff;
+        color: #ffffff;
         font-size: 24px;
     }
 
@@ -772,6 +772,10 @@ ul.social-icons {
         margin-bottom: 20px;
     }
 
+    .section-about__title{
+        margin-bottom: 10px;
+    }
+
     .about-boss{
         display: none;
     }
@@ -780,10 +784,43 @@ ul.social-icons {
         display: flex;
         background-image: url("../images/aboutBoss/Screenshot 2021-06-03 212642.png");
         align-items: flex-end;
+        height: auto;
+    }
+
+    .suggest_head > span{
+        font-size: 150%;
+    }
+
+    .course_class > div> h4{
+        font-size: 85%;
+    }
+
+    .course_class > div> h5{
+        font-size: 70%;
+        width: 80%
+    }
+
+    .barriers div h5{
+        font-size: 70%;
+    }
+
+    .suggest_two .suggest_top > h1:first-child{
+        font-size: 18px;
+    }
+
+    .suggest__one{
+        display: none;
+    }
+
+    .chclass{
+        width: 100%;
+    }
+
+    .course_class{
+        height: 250px;
     }
 
 }
-
 
 @media (max-width: 750px) {
     .headerImage{
