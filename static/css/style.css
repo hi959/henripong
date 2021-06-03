@@ -812,12 +812,12 @@ ul.social-icons {
         display: none;
     }
 
-    .chclass{
-        width: 100%;
-    }
-
     .course_class{
         height: 250px;
+        width: 100%;
+    }
+    .suggest_two{
+        width: 100%;
     }
 
 }
