@@ -822,35 +822,6 @@ ul.social-icons {
 
 }
 
-@media (max-width: 750px) {
-    .headerImage{
-        height: 250px;
-    }
-
-    .ForHr > hr:first-child{
-        display: none;
-    }
-
-    .ForHr > hr:last-child{
-        width: 100%;
-    }
-
-    .ForHr > img{
-        display: none;
-    }
-}
-
-@media (max-width: 530px) {
-    .headerImage{
-        height: 200px;
-    }
-}
-
-@media (max-width: 440px) {
-    .headerImage{
-        height: 100px;
-    }
-}
 /*
     h1{
       -webkit-touch-callout: none; /* iOS Safari
