@@ -593,6 +593,33 @@ ul.social-icons {
     top: 2500px;
 }
 
+.footer{
+    display: flex;
+    height: auto;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    position: absolute;
+    bottom: 1;
+    font-family: "Open-sans";
+    padding-top: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize
+}
+
+.footer p span {
+    font-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+
 @media (max-width: 1550px) {
     .second{
         left: 0%;
@@ -872,7 +899,7 @@ ul.social-icons {
     }
 
     .chclass-id{
-        top: 1000px;
+        top: 890px;
     }
 
     .adult-id{
