@@ -614,8 +614,8 @@ ul.social-icons {
     text-transform: capitalize
 }
 
-.footer p span {
-    font-transform: uppercase;
+.footer p span a {
+    text-transform: uppercase;
     opacity: .4;
     font-weight: 200;
 }
