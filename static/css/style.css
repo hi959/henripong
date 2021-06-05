@@ -235,7 +235,16 @@ nav {
     padding-right: 80px;
 }
 
+.section-about__text a {
+    text-decoration: underline;
+    color: aqua;
+    transition: all .35s linear;
+}
 
+.section-about__text a:hover {
+    cursor: pointer;
+    color: green;
+}
 
 .about-BssImg {
     position: relative;
@@ -874,6 +883,11 @@ ul.social-icons {
     }
 
     .course_class > div> h5{
+        font-size: 105%;
+        width: 80%
+    }
+
+    .chclass > div> h5{
         font-size: 70%;
         width: 80%
     }
