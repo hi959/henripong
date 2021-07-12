@@ -406,7 +406,7 @@ nav {
 
 .suggest_top > h1:first-child {
     font-size: 4em;
-    color: #bb2315;
+    color: black;
 }
 
 .suggest_top > h1:last-child {
@@ -569,7 +569,7 @@ ul.social-icons {
 .about-boss-id{
     position: absolute;
     height: 20px;
-    top: 740px;
+    top: 610px;
 }
 
 .chclass-id{
@@ -625,8 +625,8 @@ ul.social-icons {
 
 .footer p span a {
     text-transform: uppercase;
-    opacity: .4;
-    font-weight: 200;
+    opacity: .6;
+    font-weight: 1000;
 }
 
 @media (max-width: 1550px) {
@@ -661,7 +661,15 @@ ul.social-icons {
     }
 
     .section-about__container{
-        max-width: 100%;
+        max-width: 50%;
+    }
+
+    .about-boss2-img {
+        width: 44%;
+    }
+
+    .about-boss2-img img {
+        width: 100%;
     }
 
     .suggest_head > .fas {
@@ -849,9 +857,9 @@ ul.social-icons {
 
     .section-about__img{
         position: relative;
-        border-radius: 5%;
         width: 90%;
         height: 70%;
+        box-shadow: 0px 0px 40px 0px black;
     }
 
     .section-about__container{
@@ -860,7 +868,8 @@ ul.social-icons {
     }
 
     .section-about__title{
-        margin-bottom: 10px;
+        margin-bottom: 7px;
+        font-size: 23px;
     }
 
     .about-boss{
@@ -869,9 +878,12 @@ ul.social-icons {
 
     .about-boss2{
         display: flex;
-        background-image: url("../images/aboutBoss/Screenshot 2021-06-03 212642.png");
-        align-items: flex-end;
+        flex-direction: row;
         height: auto;
+    }
+
+    .about-boss-id{
+        top: 105px;
     }
 
     .suggest_head > span{
@@ -935,6 +947,33 @@ ul.social-icons {
     }
 
 }
+@media (max-width: 550px) {
+    .section-about__content {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 530px) {
+    .section-about__text {
+        font_size: 15px;
+    }
+}
+
+@media (max-width: 510px) {
+    .about-boss2-img {
+        width: 80%;
+        box-shadow: black 0px 1px 1px 0px inset, black 0px 50px 100px -20px, black 0px 30px 60px -30px;
+    }
+
+    .about-boss2 {
+        flex-direction: column;
+    }
+
+    .section-about__container {
+        padding: 0;
+    }
+}
+
 
 /*
     h1{
