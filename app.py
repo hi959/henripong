@@ -1,7 +1,7 @@
 import random
-from flask import Flask, render_template, url_for, redirect, request
+from flask import Flask, render_template, url_for, redirect, request, session
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, IntegerField, FileField, FloatField
+from wtforms import StringField, SubmitField, IntegerField, FileField, FloatField, PasswordField, TextField
 from wtforms.validators import DataRequired, Length
 from flask_uploads import configure_uploads, IMAGES, UploadSet
 from flask_sqlalchemy import SQLAlchemy
@@ -9,16 +9,19 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-"""
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///shop.db'
 app.config['SQLAlCHEMY_TRACK_MODIFICATION'] = False
 app.config['SECRET_KEY'] = "1428kjhg"
 app.config['UPLOADED_IMAGES_DEST'] = 'static/images/products'
+app.config['UPLOADED_GALLERY_DEST'] = 'static/images/gallery'
 db = SQLAlchemy(app)
 
 
 images = UploadSet('images', IMAGES)
+gallery = UploadSet('gallery', IMAGES)
 configure_uploads(app, images)
+configure_uploads(app, gallery)
 
 
 class CreateForm(FlaskForm):
@@ -43,26 +46,77 @@ class Items(db.Model):
         return self.title
 
 
+# GALLERY-START
+class GalleryForm(FlaskForm):
+    image = FileField("הוסף תמונה או סרטון")
+    text = TextField("טקסט לתמונה", validators=[Length(max=20)])
+
+
+class Gallery(db.Model):
+    id = db.Column(db.Integer, primary_key=True, nullable=False)
+    text = db.Column(db.Text(20), nullable=True)
+    imageName = db.Column(db.Text)
+# GALLERY-END
+
+
 class ChangeForm(FlaskForm):
     image_name = StringField("שם התמונה")
     submish = SubmitField("שנה מוצר")
-"""
+
+
+class Login(FlaskForm):
+    username = StringField('שם משתמש')
+    password = PasswordField('סיסמה')
+
 
 @app.route('/')
 def home():
-    """
+
     items = Items.query.order_by(Items.price).all()
     chosed = []
     while len(chosed) < 8:
         good = random.choice(items)
         if good not in chosed:
             chosed.append(good)
-    """
 
-    return render_template('home.html')  #צריך להוסיף , data=chosed
+    return render_template('home.html', data=chosed)  #צריך להוסיף , data=chosed
 
 
-"""
+@app.route('/add-image', methods=['GET', 'POST'])
+def addImage():
+    if "loged" in session:
+        form = GalleryForm()
+        if form.validate_on_submit():
+            image = form.image.data
+            imagename = gallery.save(image)
+            text = form.text.data
+            item = Gallery(text=text, imageName=imagename)
+            print(text+'   '+imagename)
+            try:
+                db.session.add(item)
+                db.session.commit()
+                return redirect(url_for("addImage"))
+            except:
+                return "נמצאה בעיה"
+
+        return render_template('gallery.html', form=form)
+    else:
+        return redirect(url_for("login"))
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = Login()
+    if request.method == "POST":
+        if request.form["username"] == "henri" and request.form["password"] == "123456":
+            session["loged"] = "loged"
+            return redirect(url_for("addImage"))
+        else:
+            return redirect(url_for("login"))
+    else:
+        return render_template('login.html', form=form)
+
+
 @app.route('/create', methods=['POST', 'GET'])
 def create():
 
@@ -127,7 +181,7 @@ def change(id):
         return render_template("update.html",
                                form=form,
                                name_to_change=name_to_change)
-"""
+
 
 if __name__ == '__main__':
     app.run(debug=True)

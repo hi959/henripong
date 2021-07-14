@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>גלרייה א.נ.י ספורט סנטר</title>
+{% endblock %}
+
+{% block body %}
+
+<form method="POST" enctype="multipart/form-data" style="margin-top: 100px; width: 50%; margin-right: auto; margin-left: auto; direction: rtl; text-align: right;">
+    <div class="mb-3">
+    {{ form.csrf_token }}
+        <label class="form-label">תמונה</label>
+        {{ form.image(class_="form-control") }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">טקסט לתמונה</label>
+        {{ form.text(class_="form-control") }}
+    </div>
+    <button type="submit" class="btn btn-success">סיימתי</button>
+</form>
+
+
+{% endblock %}
+
+
