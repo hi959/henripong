@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title>גלרייה א.נ.י ספורט סנטר</title>
+<title>להוסיף לגלרייה</title>
 {% endblock %}
 
 {% block style %}
@@ -13,17 +13,17 @@
 <form method="POST" enctype="multipart/form-data" style="margin-top: 100px; width: 50%; margin-right: auto; margin-left: auto; direction: rtl; text-align: right;">
     <div class="mb-3">
     {{ form.csrf_token }}
-        <label class="form-label">שם משתמש</label>
-        {{ form.username(class_="form-control") }}
+        <label class="form-label">תמונה</label>
+        {{ form.image(class_="form-control") }}
     </div>
-
-    <div>
-        <label class="form-label">סיסמה</label>
-        {{ form.password(class_="form-control") }}
+    <div class="mb-3">
+        <label class="form-label">טקסט לתמונה</label>
+        {{ form.text(class_="form-control") }}
     </div>
-    <button type="submit" class="btn btn-dark">סיימתי</button>
+    <button type="submit" class="btn btn-success">סיימתי</button>
 </form>
 
 
 {% endblock %}
+
 

@@ -2,11 +2,15 @@
 
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
 	<link rel="shortcut icon" href="static/images/home/favicon.ico" type="image/x-icon" />
 	<script src="https://www.paypalobjects.com/api/checkout.js"></script>
 	{% block title %}
 	<title>ONY sport center</title>
+	{% endblock %}
+	{% block style %}
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 	{% endblock %}
 
 </head>
@@ -254,7 +258,7 @@
 
 
 
-
+<!--
 		<div class="main-content">
 			<br>
 			<div class="catalog">
@@ -293,5 +297,5 @@
 						</div>
 						<br>
 			</div>
-
+-->
 {% endblock %}

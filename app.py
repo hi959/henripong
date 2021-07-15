@@ -5,16 +5,17 @@ from wtforms import StringField, SubmitField, IntegerField, FileField, FloatFiel
 from wtforms.validators import DataRequired, Length
 from flask_uploads import configure_uploads, IMAGES, UploadSet
 from flask_sqlalchemy import SQLAlchemy
+from datetime import timedelta
 
 
 app = Flask(__name__)
-
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///shop.db'
 app.config['SQLAlCHEMY_TRACK_MODIFICATION'] = False
 app.config['SECRET_KEY'] = "1428kjhg"
 app.config['UPLOADED_IMAGES_DEST'] = 'static/images/products'
 app.config['UPLOADED_GALLERY_DEST'] = 'static/images/gallery'
+app.permanent_session_lifetime = timedelta(minutes=30)
 db = SQLAlchemy(app)
 
 
@@ -49,13 +50,15 @@ class Items(db.Model):
 # GALLERY-START
 class GalleryForm(FlaskForm):
     image = FileField("הוסף תמונה או סרטון")
-    text = TextField("טקסט לתמונה", validators=[Length(max=20)])
+    text = StringField("טקסט לתמונה", validators=[Length(max=20)])
 
 
 class Gallery(db.Model):
     id = db.Column(db.Integer, primary_key=True, nullable=False)
     text = db.Column(db.Text(20), nullable=True)
     imageName = db.Column(db.Text)
+    width = db.Column(db.Text)
+    height = db.Column(db.Text)
 # GALLERY-END
 
 
@@ -82,16 +85,37 @@ def home():
     return render_template('home.html', data=chosed)  #צריך להוסיף , data=chosed
 
 
+@app.route('/gallery/')
+def gallerypage():
+    images = Gallery.query.all()
+    return render_template('gallery.html', images=images)
+
+
 @app.route('/add-image', methods=['GET', 'POST'])
 def addImage():
     if "loged" in session:
         form = GalleryForm()
         if form.validate_on_submit():
+            all_height = ['h-1', 'h-2', 'h-3', 'h-4', 'h-5', 'h-6']
+            all_width = ['w-1', 'w-2', 'w-3', 'w-4', 'w-5', 'w-6']
             image = form.image.data
             imagename = gallery.save(image)
             text = form.text.data
-            item = Gallery(text=text, imageName=imagename)
-            print(text+'   '+imagename)
+            width = random.choice(all_width)
+            height = random.choice(all_height)
+            if width == 'w-5' or 'w-6':
+                if random.choice(['true', 'false']) == 'true':
+                    width = random.choice(all_width)
+                else:
+                    pass
+            if height == 'h-5' or 'h-6':
+                if random.choice(['true', 'false']) == 'true':
+                    width = random.choice(all_width)
+                else:
+                    pass
+
+            item = Gallery(text=text, imageName=imagename, width=width, height=height)
+            print(text+'   '+imagename+'   '+width+'   '+height)
             try:
                 db.session.add(item)
                 db.session.commit()
@@ -99,7 +123,7 @@ def addImage():
             except:
                 return "נמצאה בעיה"
 
-        return render_template('gallery.html', form=form)
+        return render_template('add_to_gallery.html', form=form)
     else:
         return redirect(url_for("login"))
 

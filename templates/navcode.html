@@ -10,32 +10,35 @@
           <a class="nav-link active" aria-current="page" href="/">דף בית</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#about">אודות</a>
+          <a class="nav-link" href="{{ url_for('home') + '#about'}}">אודות</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             חוגים
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#chclass">חוגים לילדים</a></li>
-            <li><a class="dropdown-item" href="#adult">חוגים לבוגרים</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('home') + '#chclass'}}">חוגים לילדים</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('home') + '#adult'}}">חוגים לבוגרים</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#contact">יצירת קשר</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('home') + '#contact'}}">יצירת קשר</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             פעילויות
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#activity">פעילויות לארגונים</a></li>
-            <li><a class="dropdown-item" href="#private">אמונים אישיים</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('home') + '#activity'}}">פעילויות לארגונים</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('home') + '#private'}}">אמונים אישיים</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#contact">יצירת קשר</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('home') + '#contact'}}">יצירת קשר</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contact">יצירת קשר</a>
+          <a class="nav-link" href="{{ url_for('home') + '#contact'}}">יצירת קשר</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('gallerypage') }}">גלרייה</a>
         </li>
       </ul>
     </div>
